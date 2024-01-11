@@ -8,12 +8,21 @@
 
 .container {
     display: flex;
+
 }
 
 nav {
     display: flex;
     flex-direction: column;
     width: 230px;
+    height: calc(100vh - 90px);
+
+    border: green 4px solid;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    justify-content: space-between;
+
 
 
     /* test */
@@ -32,38 +41,35 @@ nav {
     gap: 20px;
     padding-left: 10px;
     padding-top: 20px;
+    list-style-type: none;
 }
 
 h2 {
     padding: 40px 10px;
 }
 
+.playlist>div {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: 20px;
+
+}
+
 .playlist ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: auto;
+    height: 250px;
+    line-height: 40px;
 
+    border: solid 1px black;
 
     list-style-type: none;
     padding-left: 10px;
 }
 
-.playlist ul li {
-    display: flex;
-    align-items: center;
-    padding-bottom: 20px;
-
-}
-
-.nav {
-    position: relative;
-}
-
-.playlist ul:last-child {
-    position: absolute;
-    bottom: 90px;
-    left: 0;
-}
 
 
 .add {
@@ -74,7 +80,7 @@ h2 {
 }
 
 main {
-    width: 100%;
+    width: calc(100% - 230px);
     height: 100vh;
     overflow-y: auto;
     padding-bottom: 120px;
@@ -85,17 +91,25 @@ main {
     background-color: blueviolet;
 }
 
-.upgrade {
+header {
     position: fixed;
+    top: 0;
+    z-index: 2;
+    width: calc(100% - 230px);
+}
+
+.upgrade {
     display: flex;
     justify-content: flex-end;
-    width: 100%;
+
     height: 90px;
-    background-color: beige;
+    background-color: rgba(245, 245, 220, 0.264);
+
+    border: 4px black solid;
 }
 
 button {
-    margin: 25px 260px;
+    margin: 25px 50px;
     padding: 0 20px;
 }
 
