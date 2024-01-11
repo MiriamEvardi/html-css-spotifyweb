@@ -3,3 +3,70 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
+.container {
+    display: flex;
+
+}
+
+nav {
+    width: 230px;
+    height: 100vh;
+
+    /* test */
+    background-color: aquamarine;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+
+    /* test */
+    background-color: blueviolet;
+}
+
+.upgrade {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 90px;
+    background-color: beige;
+}
+
+button {
+    margin: 25px 80px;
+    padding: 0 20px;
+}
+
+.search {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+h1 {
+    padding: 20px 20px;
+
+}
+
+.album {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.album div .image {
+    /* test */
+    background-color: darkblue;
+    width: 176px;
+    height: 176px;
+}
+
+p {
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
