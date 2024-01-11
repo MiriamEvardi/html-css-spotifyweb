@@ -11,6 +11,8 @@
 }
 
 nav {
+    display: flex;
+    flex-direction: column;
     width: 230px;
 
 
@@ -18,10 +20,64 @@ nav {
     background-color: aquamarine;
 }
 
+.logo {
+    width: 230px;
+    height: 90px;
+    background-color: brown;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+h2 {
+    padding: 40px 10px;
+}
+
+.playlist ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.playlist ul li {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+
+}
+
+.nav {
+    position: relative;
+}
+
+.playlist ul:last-child {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+}
+
+
+.add {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: azure;
+}
+
 main {
     width: 100%;
     height: 100vh;
     overflow-y: auto;
+    padding-bottom: 120px;
 
 
 
@@ -50,11 +106,12 @@ button {
     justify-content: center;
     list-style-type: none;
     padding: 10px 0;
+    padding-top: 100px;
 }
 
 h1 {
     padding: 20px 20px;
-    padding-top: 100px;
+    padding-top: 80px;
 
 }
 
@@ -83,6 +140,8 @@ footer {
     bottom: 0;
     width: 100vw;
     height: 90px;
+
+
 
     background-color: cornflowerblue;
 }
