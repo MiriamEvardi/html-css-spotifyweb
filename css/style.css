@@ -8,12 +8,11 @@
 
 .container {
     display: flex;
-
 }
 
 nav {
     width: 230px;
-    height: 100vh;
+
 
     /* test */
     background-color: aquamarine;
@@ -22,12 +21,16 @@ nav {
 main {
     width: 100%;
     height: 100vh;
+    overflow-y: auto;
+
+
 
     /* test */
     background-color: blueviolet;
 }
 
 .upgrade {
+    position: fixed;
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -36,12 +39,13 @@ main {
 }
 
 button {
-    margin: 25px 80px;
+    margin: 25px 260px;
     padding: 0 20px;
 }
 
 .search {
     display: flex;
+
     gap: 20px;
     justify-content: center;
     list-style-type: none;
@@ -50,11 +54,13 @@ button {
 
 h1 {
     padding: 20px 20px;
+    padding-top: 100px;
 
 }
 
 .album {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
 }
@@ -69,4 +75,14 @@ h1 {
 p {
     padding-left: 20px;
     padding-bottom: 30px;
+}
+
+footer {
+    position: fixed;
+
+    bottom: 0;
+    width: 100vw;
+    height: 90px;
+
+    background-color: cornflowerblue;
 }
