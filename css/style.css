@@ -5,10 +5,12 @@
 }
 
 
+body {
+    font-family: sans-serif;
+}
 
 .container {
     display: flex;
-
 }
 
 nav {
@@ -23,8 +25,6 @@ nav {
 
     justify-content: space-between;
 
-
-
     /* test */
     background-color: aquamarine;
 }
@@ -36,24 +36,32 @@ nav {
 }
 
 .home {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    font-size: 20px;
     padding-left: 10px;
-    padding-top: 20px;
-    list-style-type: none;
+    line-height: 40px;
 }
 
 h2 {
-    padding: 40px 10px;
+    padding: 10px 10px;
+    font-size: 20px;
 }
 
 .playlist>div {
-    display: flex;
-    align-items: center;
     padding-left: 10px;
-    margin-bottom: 20px;
+}
 
+.fa-plus {
+    background-color: white;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+span {
+    font-size: 20px;
+    padding-left: 10px;
 }
 
 .playlist ul {
@@ -61,16 +69,14 @@ h2 {
     flex-direction: column;
     justify-content: space-between;
     overflow-y: auto;
-    height: 250px;
     line-height: 40px;
+    font-size: 20px;
 
     border: solid 1px black;
 
     list-style-type: none;
     padding-left: 10px;
 }
-
-
 
 .add {
     display: inline-block;
@@ -90,6 +96,15 @@ main {
     /* test */
     background-color: blueviolet;
 }
+
+.profile {
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 10px;
+    list-style-type: none;
+}
+
+
 
 header {
     position: fixed;
@@ -115,6 +130,7 @@ button {
 
 .search {
     display: flex;
+    flex-wrap: wrap;
 
     gap: 20px;
     justify-content: center;
@@ -152,10 +168,368 @@ footer {
     position: fixed;
 
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     height: 90px;
 
 
 
     background-color: cornflowerblue;
+}
+
+.player-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.player-container>div {
+    display: flex;
+
+    padding: 20px 10px;
+    align-items: center;
+}
+
+.playing-now {
+    display: flex;
+
+
+    flex-direction: column;
+
+
+
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+    align-content: baseline;
+    gap: 10px;
+    font-size: 14px;
+}
+
+
+
+.player-bar {
+    margin-top: 10px;
+    width: 30vw;
+    height: 4px;
+    background-color: #ddd;
+
+}
+
+.progress {
+    height: 100%;
+    background-color: #1DB954;
+    width: 25%;
+
+}
+
+
+.song {
+
+    background-color: brown;
+    width: 50px;
+    height: 50px;
+}
+
+.song-title {
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.icon-left {
+    padding-left: 30px;
+
+}
+
+.fa-heart {
+    padding-right: 10px;
+}
+
+.player-icon {
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+
+}
+
+.fa-circle-play {
+    font-size: 30px;
+}
+
+.volume {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-bar {
+
+    background-color: black;
+    width: 8vw;
+    height: 4px;
+}
+
+.sound {
+    width: 2vw;
+    height: 100%;
+    background-color: #1DB954;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1200px) {
+
+    .home,
+    .playlist ul,
+    .profile,
+    span {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+
+
+
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+    .home,
+    .playlist ul,
+    .profile,
+    span {
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .song-title {
+        font-size: 12px;
+
+    }
+
+    .song-title strong {
+        font-size: 14px;
+    }
+
+
+
+
+}
+
+
+@media screen and (max-width: 992px) {
+
+
+    h2 {
+        font-size: 14px;
+    }
+
+
+    .home,
+    .playlist ul,
+    .profile,
+    span {
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    .song-title {
+        font-size: 12px;
+    }
+
+    .song-title strong {
+        font-size: 14px;
+    }
+
+
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
+
+    h2 {
+        font-size: 14px;
+    }
+
+
+    .home,
+    .playlist ul,
+    .profile,
+    span {
+        font-size: 12px;
+        line-height: 22px;
+    }
+
+    .player {
+        align-items: baseline;
+    }
+
+    .playing-now {
+        width: 20vw;
+    }
+
+    .player-icon {
+        font-size: 16px;
+        gap: 16px;
+    }
+
+    .song {
+        width: 35px;
+        height: 35px;
+    }
+
+    .song-title {
+        font-size: 12px;
+    }
+
+    .song-title strong {
+        font-size: 14px;
+    }
+
+    .icon-left {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .player div {
+        font-size: 10px;
+        vertical-align: middle;
+    }
+
+    .volume {
+        gap: 5px;
+    }
+
+    .volume i {
+        font-size: 10px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+
+    h2 {
+        display: none;
+    }
+
+
+    nav {
+        width: auto;
+        height: auto;
+    }
+
+    .logo {
+        width: auto;
+        height: 30px;
+    }
+
+    .home,
+    .playlist ul,
+    .profile,
+    span {
+        display: none;
+    }
+
+    .playlist>div {
+        display: none;
+    }
+
+    header {
+        width: calc(100% - 40px);
+    }
+
+    main {
+        width: calc(100% - 40px);
+    }
+
+    .player {
+        align-items: baseline;
+    }
+
+    .player-bar {
+        margin-top: 20px;
+    }
+
+    .playing-now {
+        width: 20vw;
+    }
+
+    .player-icon {
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .fa-circle-play {
+        font-size: 16px;
+    }
+
+    .song {
+        width: 20px;
+        height: 20px;
+
+    }
+
+    .song-title {
+        font-size: 10px;
+        flex-wrap: wrap;
+        padding: 1px;
+    }
+
+    .song-title strong {
+        font-size: 12px;
+    }
+
+    .icon-left {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .player div {
+        font-size: 8px;
+        vertical-align: middle;
+    }
+
+    .volume {
+        gap: 5px;
+    }
+
+    .volume i {
+        font-size: 10px;
+    }
+
+
+
+
+
+
+
+
 }
