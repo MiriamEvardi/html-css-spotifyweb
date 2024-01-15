@@ -13,16 +13,16 @@ body {
     display: flex;
 }
 
-::-webkit-scrollbar {
+main::-webkit-scrollbar {
     width: 10px;
 }
 
-::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb {
     background-color: #a26de3;
     border-radius: 5px;
 }
 
-::-webkit-scrollbar-track {
+main::-webkit-scrollbar-track {
     background-color: #ffffff;
     border-radius: 5px;
 }
@@ -594,6 +594,10 @@ li:hover {
         line-height: 25px;
     }
 
+    .playlist ul {
+        max-height: 100px;
+    }
+
     h2 {
         font-size: 14px;
     }
@@ -623,6 +627,10 @@ li:hover {
         line-height: 25px;
     }
 
+    .playlist ul {
+        max-height: 100px;
+    }
+
     .song-title {
         font-size: 12px;
     }
@@ -639,13 +647,16 @@ li:hover {
         font-size: 14px;
     }
 
-
     .home,
     .playlist ul,
     .profile,
     span {
         font-size: 12px;
         line-height: 22px;
+    }
+
+    .playlist ul {
+        max-height: 100px;
     }
 
     .player {
