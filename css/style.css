@@ -330,13 +330,12 @@ footer {
 .player-container {
     display: flex;
     justify-content: space-between;
-
-    width: 100%;
 }
 
 .player-container>div {
     display: flex;
     align-items: center;
+
 
     padding: 20px 10px;
 }
@@ -353,6 +352,12 @@ footer {
 .song-title {
     padding-left: 10px;
     font-size: 14px;
+}
+
+.song-author {
+    padding-left: 10px;
+    font-size: 12px;
+    color: #b5b7be;
 }
 
 .icon-left {
@@ -403,10 +408,13 @@ footer {
     align-content: baseline;
     gap: 10px;
 
+    width: 60%;
+
     font-size: 14px;
 }
 
 .player-bar {
+    position: relative;
     margin-top: 10px;
 
     width: 30vw;
@@ -428,6 +436,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 18px;
+    justify-content: flex-end;
 }
 
 .volume-bar {
@@ -439,13 +448,40 @@ footer {
     background-color: #5a5a5a;
 }
 
+.sound-progress {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+}
+
+.player-bar .circle {
+    position: absolute;
+    left: 25%;
+    opacity: 0;
+}
+
+.circle {
+    position: absolute;
+    left: 24%;
+    bottom: -3px;
+    background-color: #6100c9;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
 .sound {
+    position: relative;
+
     width: 2vw;
     height: 100%;
 
     border-radius: 10px;
     background-color: #f1f1f1;
 }
+
+audio {}
 
 /* Effects */
 
@@ -508,6 +544,22 @@ li:hover {
 
 .sound:hover {
     background-color: #6100c9;
+}
+
+.song-title:hover {
+    text-decoration: underline;
+}
+
+.song-author:hover {
+    text-decoration: underline;
+}
+
+.volume-bar:hover .circle {
+    opacity: 1;
+}
+
+.player-bar:hover .circle {
+    opacity: 1;
 }
 
 
@@ -630,6 +682,10 @@ li:hover {
         padding: 10px;
     }
 
+    .player-container>div {
+        width: 30%;
+    }
+
     .player div {
         vertical-align: middle;
 
@@ -653,8 +709,6 @@ li:hover {
         width: auto;
         height: auto;
     }
-
-
 
     .logo {
         width: auto;
@@ -699,6 +753,7 @@ li:hover {
 
     .player {
         align-items: baseline;
+        width: 50%;
     }
 
     h2 {
@@ -754,6 +809,10 @@ li:hover {
         font-size: 20px;
     }
 
+    .player-container>div {
+        width: 25%;
+    }
+
     .player div {
         font-size: 8px;
         vertical-align: middle;
@@ -793,6 +852,7 @@ li:hover {
         width: 100%;
         height: 2vh;
     }
+
 
 
 

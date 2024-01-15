@@ -185,7 +185,11 @@
 
             <div>
                 <div class="song"><img src="./img/uraganodamn.png" alt=""></div>
-                <div class="song-title"> <strong>URAGANO DAMN</strong> <br>thasup</div>
+                <div>
+                    <div class="song-title"><strong>URAGANO
+                            DAMN</strong></div>
+                    <div class="song-author">thasup</div>
+                </div>
                 <div class="icon-left">
                     <i class="fa-regular fa-heart"></i>
                     <i class="fa-regular fa-folder"></i>
@@ -205,6 +209,7 @@
                     <div>0:50</div>
                     <div class="player-bar">
                         <div id="progress"></div>
+                        <div class="circle"></div>
                     </div>
                     <div>3:22</div>
                     <audio id="audioPlayer" src="img/thasup - URAGANO DAMN (Visual Video).mp3"></audio>
@@ -218,9 +223,11 @@
                     <i class="fa-solid fa-desktop"></i>
                     <i class="fa-solid fa-volume-high"></i>
                 </div>
-                <div>
+                <div class="sound-progress">
                     <div class="volume-bar">
-                        <div class="sound"></div>
+                        <div class="sound">
+                        </div>
+                        <div class="circle"></div>
                     </div>
                 </div>
             </div>
@@ -231,8 +238,9 @@
 
                 const audioPlayer = document.getElementById('audioPlayer');
                 const progress = document.getElementById('progress');
-
                 const playPauseButton = document.getElementById('playPause');
+
+                audioPlayer.volume = 0.2;
 
                 playPauseButton.addEventListener('click', () => {
                     if (audioPlayer.paused) {
