@@ -408,8 +408,6 @@ footer {
     align-content: baseline;
     gap: 10px;
 
-    width: 60%;
-
     font-size: 14px;
 }
 
@@ -764,7 +762,6 @@ li:hover {
 
     .player {
         align-items: baseline;
-        width: 50%;
     }
 
     h2 {
