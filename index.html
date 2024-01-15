@@ -22,25 +22,25 @@
                 </div>
 
                 <div class="home">
-                    <div>
-                        <div>
+                    <div class="side-menu">
+                        <div class="select">
                             <img src="./img/home.svg" alt="">
                         </div>
                         <span class="menu">Home</span>
                     </div>
 
-                    <div>
+                    <div class="side-menu">
                         <div>
                             <img src="./img/search.svg" alt="">
                         </div>
                         <span class="menu">Search</span>
                     </div>
 
-                    <div>
+                    <div class="side-menu">
                         <div>
                             <img src="./img/libreria.svg" alt="">
                         </div>
-                        <span class="menu">Home</span>
+                        <span class="menu">La mia libreria</span>
                     </div>
                 </div>
 
@@ -87,7 +87,9 @@
             </header>
 
             <ul class="search">
-                <li>IN EVIDENZA</li>
+                <li>IN EVIDENZA
+                    <hr>
+                </li>
                 <li>PODCAST</li>
                 <li>CLASSIFICHE</li>
                 <li>GENERI E MOOD</li>
@@ -99,32 +101,44 @@
 
             <div class="album">
                 <div>
-                    <div class="image"><img src="./img/uraganodamn.png" alt=""></div>
+                    <div class="image"><img src="./img/uraganodamn.png" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
+                    </div>
                     <div class="title">URAGANO DAMN</div>
                     <div class="author">thasup</div>
                 </div>
                 <div>
-                    <div class="image"><img src="./img/carattere speciale.png" alt=""></div>
+                    <div class="image"><img src="./img/carattere speciale.png" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
+                    </div>
                     <div class="title">Dimmi Che C'è (Feat. Tedua)</div>
                     <div class="author">thasup, Tedua</div>
                 </div>
                 <div>
-                    <div class="image"><img src="./img/sad-toxic.jpg" alt=""></div>
+                    <div class="image"><img src="./img/sad-toxic.jpg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
+                    </div>
                     <div class="title">TOXIC</div>
                     <div class="author">LA SAD</div>
                 </div>
                 <div>
-                    <div class="image"><img src="./img/coltellata.png" alt=""></div>
+                    <div class="image"><img src="./img/coltellata.png" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
+                    </div>
                     <div class="title">Coltellata</div>
                     <div class="author">Gazzelle, thasup</div>
                 </div>
                 <div>
-                    <div class="image"><img src="./img/boulevard of broken dreams.jpg" alt=""></div>
+                    <div class="image"> <img src="./img/boulevard of broken dreams.jpg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
+                    </div>
                     <div class="title">Boulevard of broken dreams</div>
                     <div class="author">Green Day</div>
                 </div>
                 <div>
-                    <div class="image"><img src="./img/i think i'm okay.jpg" alt=""></div>
+                    <div class="image"> <img src="./img/i think i'm okay.jpg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
+                    </div>
                     <div class="title">I Think I'm OKAY</div>
                     <div class="author">Machine Gun Kelly, YUNGBLUD</div>
                 </div>
@@ -135,11 +149,15 @@
 
             <div class="album">
                 <div>
-                    <div class="image"><img src="./img/radar.jpeg" alt=""></div>
+                    <div class="image"><img src="./img/radar.jpeg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
+                    </div>
                     <div class="title">Release Radar</div>
                 </div>
                 <div>
-                    <div class="image"><img src="./img/mixdaily.jpeg" alt=""></div>
+                    <div class="image"><img src="./img/mixdaily.jpeg" alt="">
+                        <i class="fa-regular fa-circle-play"></i>
+                    </div>
                     <div class="title">Daily Mix 1</div>
                 </div>
             </div>
@@ -175,10 +193,10 @@
             </div>
 
             <div class="playing-now">
-                <div class="player-icon">
+                <div class="controls">
                     <i class="fa-solid fa-shuffle"></i>
                     <i class="fa-solid fa-backward-step"></i>
-                    <i class="fa-regular fa-circle-play"></i>
+                    <button id="playPause"><i class="fa-regular fa-circle-play"></i></button>
                     <i class="fa-solid fa-forward-step"></i>
                     <i class="fa-solid fa-arrow-rotate-right"></i>
                 </div>
@@ -186,10 +204,12 @@
                 <div class="player">
                     <div>0:50</div>
                     <div class="player-bar">
-                        <div class="progress"></div>
+                        <div id="progress"></div>
                     </div>
                     <div>3:22</div>
+                    <audio id="audioPlayer" src="img/thasup - URAGANO DAMN (Visual Video).mp3"></audio>
                 </div>
+
             </div>
 
             <div>
@@ -204,6 +224,32 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <script>
+
+                const audioPlayer = document.getElementById('audioPlayer');
+                const progress = document.getElementById('progress');
+
+                const playPauseButton = document.getElementById('playPause');
+
+                playPauseButton.addEventListener('click', () => {
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                        playPauseButton.innerHTML = '&#10074;&#10074;';
+                    } else {
+                        audioPlayer.pause();
+                        playPauseButton.innerHTML = '<i class="fa-regular fa-circle-play"></i>';
+                    }
+
+                });
+
+                audioPlayer.addEventListener('timeupdate', () => {
+                    const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+                    progress.style.width = `${progress}%`;
+                });
+            </script>
         </div>
     </footer>
 </body>

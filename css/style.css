@@ -13,6 +13,23 @@ body {
     display: flex;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a26de3;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+
+
+
 nav {
     display: flex;
     flex-direction: column;
@@ -30,7 +47,7 @@ nav {
 
 .logo {
     width: 230px;
-    height: 90px;
+    height: 80px;
 }
 
 .small {
@@ -46,11 +63,10 @@ nav {
 }
 
 .home {
-    font-size: 20px;
+    font-size: 30px;
     line-height: 40px;
 
     padding-top: 5px;
-    padding-left: 10px;
 }
 
 .home div {
@@ -59,8 +75,21 @@ nav {
 
 .home div div {
     display: inline-block;
+    padding-left: 10px;
 
-    width: 25px;
+    width: 45px;
+}
+
+.home .side-menu div img {
+    opacity: 0.7;
+}
+
+.home:nth-child(3) {
+    border-left: #000000 4px solid;
+}
+
+.select {
+    border-left: #a26de3 4px solid;
 }
 
 h2 {
@@ -76,7 +105,8 @@ h2 {
 
 .fa-plus {
     color: black;
-    background-color: #b5b7be;
+    background-color: white;
+    opacity: 0.7;
 
     font-size: 20px;
 
@@ -205,9 +235,18 @@ button {
     padding-top: 100px;
 
     font-size: 14px;
+    font-weight: 700;
     color: #b5b7be;
 
     list-style-type: none;
+}
+
+.search li:first-child hr {
+    border: 3px rgb(212, 83, 255) solid;
+    border-radius: 10px;
+
+    width: 30px;
+    margin-left: 30px;
 }
 
 h1 {
@@ -232,11 +271,21 @@ h1 {
 
 .album div .image {
     width: 176px;
-    height: 176px;
+    position: relative;
 }
 
 .album div .image img {
     width: 100%;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.album div .image i {
+    opacity: 0;
+    position: absolute;
+    font-size: 60px;
+    left: 62px;
+    top: 54px;
+    transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .title {
@@ -308,11 +357,15 @@ footer {
 
 .icon-left {
     padding-left: 30px;
-
 }
 
 .fa-heart {
+    opacity: 0.5;
     padding-right: 10px;
+}
+
+.fa-folder {
+    opacity: 0.5;
 }
 
 .playing-now {
@@ -320,7 +373,7 @@ footer {
     flex-direction: column;
 }
 
-.player-icon {
+.controls {
     display: flex;
     gap: 40px;
     text-align: center;
@@ -329,11 +382,22 @@ footer {
     font-size: 20px;
 }
 
+.controls button {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#playPause {
+    font-size: 25px;
+}
+
 .fa-circle-play {
     font-size: 30px;
 }
 
 .player {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-content: baseline;
@@ -349,19 +413,21 @@ footer {
     height: 4px;
 
     background-color: #5a5a5a;
+    border-radius: 10px;
 }
 
-.progress {
+#progress {
     height: 100%;
-    width: 25%;
+    width: 26%;
 
-    background-color: #6100c9;
+    background-color: #f1f1f1;
+    border-radius: 10px;
 }
 
 .volume {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 18px;
 }
 
 .volume-bar {
@@ -369,6 +435,7 @@ footer {
     height: 4px;
     margin-left: 10px;
 
+    border-radius: 10px;
     background-color: #5a5a5a;
 }
 
@@ -376,8 +443,75 @@ footer {
     width: 2vw;
     height: 100%;
 
+    border-radius: 10px;
+    background-color: #f1f1f1;
+}
+
+/* Effects */
+
+button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.album div .image:hover i {
+    opacity: 1;
+}
+
+.album div .image:hover i {
+    color: #f4d9fc;
+    cursor: pointer;
+}
+
+.album div .image:hover img {
+    filter: brightness(50%);
+    color: #f4d9fc;
+    cursor: pointer;
+}
+
+li:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.home .side-menu:hover div img {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.side-menu .menu:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.playlist div:hover {
+    color: white;
+}
+
+.playlist div:hover i {
+    opacity: 1;
+}
+
+.fa-heart:hover,
+.fa-folder:hover {
+    opacity: 1;
+}
+
+.fa-circle-play:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+.player #progress:hover {
     background-color: #6100c9;
 }
+
+.sound:hover {
+    background-color: #6100c9;
+}
+
+
+
 
 
 
@@ -470,7 +604,7 @@ footer {
         width: 20vw;
     }
 
-    .player-icon {
+    .controls {
         gap: 16px;
 
         font-size: 16px;
@@ -558,7 +692,9 @@ footer {
     }
 
     button {
-        font-size: 12px;
+        transition: transform 0.3s;
+
+        font-size: 10px;
     }
 
     .player {
@@ -609,7 +745,7 @@ footer {
         width: 20vw;
     }
 
-    .player-icon {
+    .controls {
         font-size: 16px;
         gap: 10px;
     }
@@ -625,6 +761,7 @@ footer {
 
     .player-bar {
         margin-top: 10px;
+
     }
 
     .volume {
